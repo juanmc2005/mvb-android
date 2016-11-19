@@ -16,8 +16,8 @@ Moreover, it is pluggable to RxJava, so you can expect to connect them easily an
 
 ## A Simple Example
 
+### The Activity
 ```java
-// The Activity
 public class MyActivity extends MVBActivity implements MVBView {
     
     private Button btnLogin;
@@ -49,8 +49,10 @@ public class MyActivity extends MVBActivity implements MVBView {
         return new Binding[] { loginBinding };
     }
 }
+```
 
-// The ViewModel for the Activity
+### The ViewModel for the Activity
+```java
 public class MyViewModel extends ViewModel<MVBView> {
     
     private final LoginService service = new LoginService();
@@ -71,8 +73,10 @@ public class MyViewModel extends ViewModel<MVBView> {
         return new UseCase[] { loginUseCase };
     }
 }
+```
 
-// The LoginService which provides the Observable
+### The Service providing the Observables
+```java
 public class LoginService {
     
     public Observable<User> testLogin() {
