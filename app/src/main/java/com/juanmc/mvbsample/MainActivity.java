@@ -5,10 +5,11 @@ import android.widget.Toast;
 
 import com.devsar.android.ucbindings.bindings.Binding;
 import com.devsar.android.ucbindings.bindings.BindingBuilder;
-import com.devsar.android.ucbindings.bindings.BoundActivity;
+import com.juanmc.mvb.MVBActivity;
 import com.juanmc.mvb.MVBView;
+import com.juanmc.mvb.ViewModel;
 
-public class MainActivity extends BoundActivity implements MVBView {
+public class MainActivity extends MVBActivity implements MVBView {
 
     private MainViewModel viewModel;
     private Binding someBinding;
@@ -34,6 +35,11 @@ public class MainActivity extends BoundActivity implements MVBView {
     protected void onDestroy() {
         super.onDestroy();
         viewModel.detachView();
+    }
+
+    @Override
+    protected ViewModel<?> getViewModel() {
+        return viewModel;
     }
 
     @Override

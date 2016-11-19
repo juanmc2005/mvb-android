@@ -1,12 +1,12 @@
 package com.juanmc.mvb;
 
-import android.support.v7.app.AppCompatActivity;
+import com.devsar.android.ucbindings.bindings.BoundActivity;
 
 /**
  * Created by juanma on 18/11/16.
  */
 
-public abstract class MVBActivity extends AppCompatActivity {
+public abstract class MVBActivity extends BoundActivity {
 
     @Override
     protected void onDestroy() {
